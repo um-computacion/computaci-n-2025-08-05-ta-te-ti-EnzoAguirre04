@@ -23,7 +23,7 @@ class Tablero:
             [" ", " ", " "],
         ]
 
-    def impresion(self):
+    def imprimir(self):
         # Imprime en la consola el estado actual del tablero del Ta-te-ti.
         for fil in self.contenedor:
             print("|".join(fil))
