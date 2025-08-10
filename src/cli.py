@@ -22,16 +22,29 @@ from src.tablero import CeldaOcupadaException
 
 ## Inicio del cli.
 
+def ficha_valida(nombre_jugador):
+    while True:
+        ficha = input(f"Ficha del jugador {nombre_jugador} (X/O): ").strip().upper().replace("0", "O")
+        if ficha not in ('X', 'O'):
+            print(f"Error en la creación del jugador: Ficha inválida: {ficha}. Debe ser 'X' u 'O'.")
+        else:
+            return ficha
+
 def ejecutar_juego():
     try:
-        nombre1 = input("Nombre del jugador 1: ")
-        ficha1 = input("Ficha del jugador 1 (X/O): ")
+        nombre1 = input("Nombre del jugador 1: ").strip()
+        ficha1 = ficha_valida(nombre1)
         jugador1 = Jugador(nombre1, ficha1)
 
-        nombre2 = input("Nombre del jugador 2: ")
-        ficha2 = input("Ficha del jugador 2 (X/O): ")
+        nombre2 = input("Nombre del jugador 2: ").strip()
+        while True:
+            ficha2 = ficha_valida(nombre2)
+            if ficha2 == ficha1:
+                print(f"La ficha '{ficha2}' ya está tomada por {nombre1}. Elegí otra.")
+            else:
+                break
+    
         jugador2 = Jugador(nombre2, ficha2)
-
         juego = Tateti(jugador1, jugador2)
 
     except FichaInvalidaException as e:
