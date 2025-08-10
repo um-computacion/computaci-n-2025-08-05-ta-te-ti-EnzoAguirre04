@@ -32,10 +32,13 @@ class Tablero:
         ]
 
     def imprimir(self):
-        # Imprime en la consola el estado actual del tablero del Ta-te-ti.
-        for fil in self.contenedor:
-            print("|".join(fil))
-            print("-" * 5)
+        # Imprime índices columnas
+        print("   0   1   2")
+        for i, fila in enumerate(self.contenedor):
+            # Imprime índice fila y celdas separadas con espacios y barras verticales
+            print(f"{i}  " + " | ".join(fila))
+            if i < 2:
+                print("  " + "---+---+---")
 
     def validar_ficha(self, ficha):
         if ficha not in ("X", "O"):
