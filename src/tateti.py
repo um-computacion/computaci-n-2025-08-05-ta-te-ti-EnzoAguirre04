@@ -10,12 +10,16 @@ Ruta: "computaci-n-2025-08-05-ta-te-ti-EnzoAguirre04/src/tateti.py".
 
 ## Incio de imports.
 
-from src.tablero import Tablero
+from src.tablero import Tablero, CeldaOcupadaException
 from src.jugador import Jugador
 
 ## Fin de imports.
 
 ## Inicio de exepciones.
+
+class JugadaInvalidaException(Exception):
+    """Se intentó hacer una jugada fuera del tablero."""
+    pass
 
 ## Fin de exepciones.
 
@@ -36,7 +40,12 @@ class Tateti:
 
     def jugar_turno(self, fil: int, col: int) -> None:
         jugador = self.jugador_actual()
-        self.tablero.colocar_ficha(fil, col, jugador.ficha)
+        try:
+            self.tablero.colocar_ficha(fil, col, jugador.ficha)
+        except IndexError:
+            raise JugadaInvalidaException(f"Posición inválida: ({fil}, {col})")
+        except CeldaOcupadaException as e:
+            raise e
 
         if self.tablero.verificar_ganador(jugador.ficha):
             self.ganador = jugador
