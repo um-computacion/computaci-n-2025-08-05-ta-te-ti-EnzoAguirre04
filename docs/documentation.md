@@ -38,7 +38,7 @@ tateti/
 - Python 3.10 o superior instalado.
 - Ejecutar desde la raíz del proyecto `computaci-n-2025-08-05-ta-te-ti-EnzoAguirre04/`.
 
-### Ejecutar el juego:
+### Ejecutar el programa:
 
 Desde la terminal, correr:
 

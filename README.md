@@ -1,4 +1,4 @@
-# 🏥 Juego de Ta-Te-Ti
+# ❌ Juego de Ta-Te-Tí 🔴
 
 ---
 
@@ -9,9 +9,14 @@
 - **Ciclo Lectivo**: 2025
 - **Carrera**: Ingeniería en Informática
 
+---
+
 ## ⏰ Información Importante sobre la Entrega
 
 ### 📅 Fechas Clave
 - **Fecha de entrega**: 12 de agosto de 2025
 
 ---
+
+### Documentación
+- **Guía de Ejecución y Estructura**: (docs/documentation.md)
