@@ -35,11 +35,11 @@ class Jugador:
         if ficha_normalizada == "0":
             ficha_normalizada = "O"
 
-        if ficha not in ("X", "O"):
+        if ficha_normalizada not in ("X", "O"):
             raise FichaInvalidaException(f"Ficha inválida: {ficha}. Debe ser 'X' u 'O'.")
         
         self.nombre = nombre
-        self.ficha = ficha
+        self.ficha = ficha_normalizada
 
     def pedir_jugada(self):
         # Solicita al usuario que ingrese fila y columna.
