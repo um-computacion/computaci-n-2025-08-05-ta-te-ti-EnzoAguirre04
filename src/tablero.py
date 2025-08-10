@@ -14,7 +14,7 @@ Ruta: "computaci-n-2025-08-05-ta-te-ti-EnzoAguirre04/src/tablero.py".
 
 ## Inicio de exepciones.
 
-class CeldaOcupadaError(Exception):
+class CeldaOcupadaException(Exception):
     """Se intentó colocar una ficha en una celda que ya está ocupada."""
     pass
 
@@ -55,7 +55,7 @@ class Tablero:
         self.validar_ficha(ficha)
 
         if not self.celda_libre(fil, col):
-            raise CeldaOcupadaError(f"La celda ({fil}, {col}) ya está ocupada.")
+            raise CeldaOcupadaException(f"La celda ({fil}, {col}) ya está ocupada.")
 
         self.contenedor[fil][col] = ficha
 
