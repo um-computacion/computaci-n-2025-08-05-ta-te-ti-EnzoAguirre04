@@ -29,16 +29,21 @@ class JugadaInvalidaError(Exception):
 
 class Jugador:
     def __init__(self, nombre, ficha):
+        ficha_normalizada = ficha.strip().upper()
+
+        # Acepta '0' como 'O'.
+        if ficha_normalizada == "0":
+            ficha_normalizada = "O"
+
         if ficha not in ("X", "O"):
             raise FichaInvalidaError(f"Ficha inválida: {ficha}. Debe ser 'X' u 'O'.")
+        
         self.nombre = nombre
         self.ficha = ficha
 
     def pedir_jugada(self):
-        """
-        Solicita al usuario que ingrese fila y columna.
-        Devuelve una tupla (fila, columna) con índices enteros 0–2.
-        """
+        # Solicita al usuario que ingrese fila y columna.
+        # Devuelve una tupla (fila, columna) con índices enteros 0–2.
         while True:
             try:
                 entrada = input(f"{self.nombre} ({self.ficha}), ingrese fila y columna (0-2) separadas por espacio: ")
