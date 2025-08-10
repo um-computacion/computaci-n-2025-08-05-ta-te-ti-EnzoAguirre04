@@ -1,4 +1,4 @@
-from tateti import Tateti
+from src.tateti import Tateti
 
 
 def main():
