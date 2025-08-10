@@ -5,6 +5,7 @@ Ciclo Lectivo: 2025.
 Carrera: Ingeniería en Informática.
 Ruta: "computaci-n-2025-08-05-ta-te-ti-EnzoAguirre04/tests/test_tablero.py".
 """
+
 ## Inicio del código.
 
 # Inicio de imports.
@@ -63,4 +64,4 @@ class TestTablero(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 
-## Inicio del código.
+## Fin del código.
