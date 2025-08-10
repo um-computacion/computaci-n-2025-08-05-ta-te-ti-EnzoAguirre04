@@ -5,9 +5,16 @@ Ciclo Lectivo: 2025.
 Carrera: Ingeniería en Informática.
 Ruta: "computaci-n-2025-08-05-ta-te-ti-EnzoAguirre04/tests/test_tablero.py".
 """
+## Inicio del código.
+
+# Inicio de imports.
 
 import unittest
 from src.tablero import Tablero, CeldaOcupadaException
+
+# Fin de imports.
+
+# Inicio de la clase de pruebas.
 
 class TestTablero(unittest.TestCase):
 
@@ -51,5 +58,9 @@ class TestTablero(unittest.TestCase):
                 ficha = "O" if ficha == "X" else "X"
         self.assertTrue(self.tablero.tablero_lleno())
 
+# Fin de la clase de pruebas.
+
 if __name__ == "__main__":
     unittest.main()
+
+## Inicio del código.
