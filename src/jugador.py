@@ -14,12 +14,12 @@ Ruta: "computaci-n-2025-08-05-ta-te-ti-EnzoAguirre04/src/jugador.py".
 
 ## Inicio de exepciones.
 
-class FichaInvalidaError(Exception):
+class FichaInvalidaException(Exception):
     """Se lanza cuando la ficha no es 'X' ni 'O'."""
     pass
 
 
-class JugadaInvalidaError(Exception):
+class JugadaInvalidaException(Exception):
     """Se lanza cuando la jugada ingresada no cumple el formato o el rango."""
     pass
 
@@ -36,7 +36,7 @@ class Jugador:
             ficha_normalizada = "O"
 
         if ficha not in ("X", "O"):
-            raise FichaInvalidaError(f"Ficha inválida: {ficha}. Debe ser 'X' u 'O'.")
+            raise FichaInvalidaException(f"Ficha inválida: {ficha}. Debe ser 'X' u 'O'.")
         
         self.nombre = nombre
         self.ficha = ficha
@@ -51,13 +51,13 @@ class Jugador:
                 fil, col = int(fil_str), int(col_str)
 
                 if not (0 <= fil < 3 and 0 <= col < 3):
-                    raise JugadaInvalidaError("Posición fuera de rango. Debe estar entre 0 y 2.")
+                    raise JugadaInvalidaException("Posición fuera de rango. Debe estar entre 0 y 2.")
 
                 return fil, col
 
             except ValueError:
                 print("Formato inválido. Ejemplo: '1 2'")
-            except JugadaInvalidaError as e:
+            except JugadaInvalidaException as e:
                 print(e)
 
 ## Fin de la clase Jugador.
