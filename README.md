@@ -18,5 +18,5 @@
 
 ---
 
-### Documentación
+## ⚠️ Documentación
 - **[Guía de Ejecución y Estructura](docs/documentation.md)**
