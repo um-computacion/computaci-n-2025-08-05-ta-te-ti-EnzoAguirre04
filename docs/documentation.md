@@ -2,6 +2,7 @@
 
 ## Estructura de archivos
 
+```
 tateti/
 │
 ├── main.py
@@ -24,7 +25,7 @@ tateti/
 │ └── documentation.md
 │
 └── README.md
-
+```
 
 ---
 
