@@ -12,7 +12,8 @@ Ruta: "computaci-n-2025-08-05-ta-te-ti-EnzoAguirre04/tests/test_tateti.py".
 
 import unittest
 from src.tateti import Tateti
-from src.jugador import Jugador, JugadaInvalidaException
+from src.jugador import Jugador
+from src.tateti import JugadaInvalidaException
 from src.tablero import CeldaOcupadaException
 
 # Fin de imports.
